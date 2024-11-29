@@ -1,9 +1,13 @@
 import {getAllPosts} from "@/lib/posts";
 import Link from "next/link";
-export default function Home() {
-  const posts = getAllPosts();
-  console.log(import.meta.url)
-  // console.log(require.resolve('@/lib'));
+import logger from "@/lib/logger";
+
+export  default async function Home() {
+  const posts = await getAllPosts();
+  // console.log(import.meta.url)
+  logger.debug(import.meta.url);
+  logger.info(process.cwd());
+
   return (
     <div>
       <h2>Nextjs Blog</h2>
