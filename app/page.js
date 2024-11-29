@@ -2,6 +2,8 @@ import {getAllPosts} from "@/lib/posts";
 import Link from "next/link";
 export default function Home() {
   const posts = getAllPosts();
+  console.log(import.meta.url)
+  // console.log(require.resolve('@/lib'));
   return (
     <div>
       <h2>Nextjs Blog</h2>
